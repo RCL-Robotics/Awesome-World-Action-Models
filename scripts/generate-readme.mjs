@@ -4,6 +4,7 @@ import { CATEGORIES, atomicWriteFiles, coverage, readJson, sortPapers, validateM
 import { MAJOR_CATEGORIES, QUADRANTS, QUADRANT_STATUSES, taxonomyLabel } from '../src/lib/taxonomy.mjs';
 import { venueLabel } from '../src/lib/display.mjs';
 import { siteName, siteShortName } from '../src/lib/site.mjs';
+import { surveyArxivId, surveyArxivUrl, surveyBibtex } from '../src/lib/survey.mjs';
 
 const ROOT = new URL('../', import.meta.url);
 const repositoryName = 'RCL-Robotics/Awesome-World-Action-Models';
@@ -47,8 +48,8 @@ export function renderReadme(inputPapers, inputMeta) {
     '<div align="center">',
     `  <h1>${siteName}</h1>`,
     '  <p>',
+    `    <a href="${surveyArxivUrl}"><img src="https://img.shields.io/badge/arXiv-${surveyArxivId}-B31B1B?style=for-the-badge&amp;logo=arxiv&amp;logoColor=white" alt="arXiv: ${surveyArxivId}" /></a>`,
     `    <a href="${website}"><img src="https://img.shields.io/badge/Web-Project_Page-2F6FEB?style=for-the-badge&amp;logo=googlechrome&amp;logoColor=white" alt="Web: Project Page" /></a>`,
-    '    <img src="https://img.shields.io/badge/arXiv-Coming_Soon-B31B1B?style=for-the-badge&amp;logo=arxiv&amp;logoColor=white" alt="arXiv: Coming Soon" />',
     '  </p>',
     '  <p><strong>World-Action Models for Robot Learning and Control: A Survey</strong></p>',
     '  <p>',
@@ -134,8 +135,10 @@ export function renderReadme(inputPapers, inputMeta) {
     '| Repository code license | [MIT License](LICENSE) |', '',
     'Paper abstracts and other attributed research content remain the work of their respective authors and rights holders.', '',
     '## Citation', '',
-    '<!-- Citation placeholder: add the verified paper reference and BibTeX here when available. -->',
-    '*Citation details and BibTeX will be added here when available.*', '',
+    `If you find this survey useful, please cite [our paper](${surveyArxivUrl}).`, '',
+    '```bibtex',
+    surveyBibtex,
+    '```', '',
     '## Star History', '',
     'The chart tracks this repository\'s GitHub stars over time and fills in as stars are recorded.', '',
     `<a href="https://www.star-history.com/?repos=${encodeURIComponent(repositoryName)}&amp;type=date&amp;legend=top-left">`,

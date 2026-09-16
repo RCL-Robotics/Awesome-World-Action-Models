@@ -1,35 +1,20 @@
 ---
 import Icon from './Icon.astro';
-import { repoUrl } from '../lib/catalog';
-import { surveyAuthors, surveyTitle, surveyYear } from '../lib/survey.mjs';
-
-// Cite the public project until the repository provides a formal paper reference.
-const authorLines = surveyAuthors.reduce<string[]>((lines, author, index) => {
-  if (index % 4 === 0) lines.push(author.name);
-  else lines[lines.length - 1] += ` and ${author.name}`;
-  return lines;
-}, []);
-const bibtex = `@misc{lu2026worldactionmodels,
-  title        = {{${surveyTitle}}},
-  author       = {${authorLines.join(' and\n                  ')}},
-  year         = {${surveyYear}},
-  howpublished = {Project website and paper collection},
-  url          = {${repoUrl}}
-}`;
+import { surveyArxivId, surveyArxivUrl, surveyBibtex as bibtex } from '../lib/survey.mjs';
 ---
 
 <section id="citation" class="survey-citation" aria-labelledby="citation-heading">
   <h2 id="citation-heading">Citation</h2>
-  <p class="citation-intro">If you find our survey or WAMs resources useful in your research, please cite this project.</p>
+  <p class="citation-intro">If you find our survey or WAMs resources useful in your research, please cite our paper.</p>
   <div class="citation-box">
     <div class="citation-toolbar">
       <label for="survey-bibtex">BibTeX</label>
       <button id="copy-survey-citation" type="button"><Icon name="copy" size={15}/><span>Copy BibTeX</span></button>
     </div>
-    <textarea id="survey-bibtex" aria-label="Project citation in BibTeX format" readonly spellcheck="false" rows={bibtex.split('\n').length}>{bibtex}</textarea>
+    <textarea id="survey-bibtex" aria-label="Paper citation in BibTeX format" readonly spellcheck="false" rows={bibtex.split('\n').length}>{bibtex}</textarea>
   </div>
   <div class="citation-details">
-    <p>Project citation. The paper’s arXiv reference will be added when available.</p>
+    <p><a href={surveyArxivUrl} target="_blank" rel="noopener noreferrer">arXiv:{surveyArxivId}</a> [cs.RO]</p>
     <p id="survey-citation-status" role="status" aria-live="polite"></p>
   </div>
 </section>

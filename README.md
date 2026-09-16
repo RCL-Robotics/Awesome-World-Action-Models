@@ -2,8 +2,8 @@
 <div align="center">
   <h1>World-Action Models</h1>
   <p>
+    <a href="https://arxiv.org/abs/2609.16074"><img src="https://img.shields.io/badge/arXiv-2609.16074-B31B1B?style=for-the-badge&amp;logo=arxiv&amp;logoColor=white" alt="arXiv: 2609.16074" /></a>
     <a href="https://rcl-robotics.github.io/Awesome-World-Action-Models/"><img src="https://img.shields.io/badge/Web-Project_Page-2F6FEB?style=for-the-badge&amp;logo=googlechrome&amp;logoColor=white" alt="Web: Project Page" /></a>
-    <img src="https://img.shields.io/badge/arXiv-Coming_Soon-B31B1B?style=for-the-badge&amp;logo=arxiv&amp;logoColor=white" alt="arXiv: Coming Soon" />
   </p>
   <p><strong>World-Action Models for Robot Learning and Control: A Survey</strong></p>
   <p>
@@ -131,8 +131,22 @@ Paper abstracts and other attributed research content remain the work of their r
 
 ## Citation
 
-<!-- Citation placeholder: add the verified paper reference and BibTeX here when available. -->
-*Citation details and BibTeX will be added here when available.*
+If you find this survey useful, please cite [our paper](https://arxiv.org/abs/2609.16074).
+
+```bibtex
+@misc{lu2026worldactionmodels,
+  title         = {{World-Action Models for Robot Learning and Control: A Survey}},
+  author        = {Zuxing Lu and Hongjia Zhai and Guanzhi Wang and Huajian Zeng and
+                   Jiaqi Yang and Jingyu Liu and Lei Cheng and Yuantai Zhang and
+                   Yuheng Qiu and Zezhou Cheng and Ivan Laptev and Danfei Xu and
+                   Benjamin Riviere and Giuseppe Loianno and Eric Xing and Xingxing Zuo},
+  year          = {2026},
+  eprint        = {2609.16074},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2609.16074}
+}
+```
 
 ## Star History
 

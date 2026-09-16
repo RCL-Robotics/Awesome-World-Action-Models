@@ -2,6 +2,8 @@ import { siteName } from './site.mjs';
 
 export const surveyTitle = `${siteName} for Robot Learning and Control: A Survey`;
 export const surveyYear = 2026;
+export const surveyArxivId = '2609.16074';
+export const surveyArxivUrl = `https://arxiv.org/abs/${surveyArxivId}`;
 
 // Author order, affiliations, and contribution marks from the repository README:
 // https://github.com/RCL-Robotics/Awesome-World-Action-Model (retrieved 2026-09-12).
@@ -32,3 +34,19 @@ export const surveyAffiliations = [
   'New York University',
   'UC Berkeley',
 ];
+
+const authorLines = surveyAuthors.reduce((lines, author, index) => {
+  if (index % 4 === 0) lines.push(author.name);
+  else lines[lines.length - 1] += ` and ${author.name}`;
+  return lines;
+}, []);
+
+export const surveyBibtex = `@misc{lu2026worldactionmodels,
+  title         = {{${surveyTitle}}},
+  author        = {${authorLines.join(' and\n                   ')}},
+  year          = {${surveyYear}},
+  eprint        = {${surveyArxivId}},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {${surveyArxivUrl}}
+}`;

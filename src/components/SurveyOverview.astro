@@ -5,6 +5,7 @@ import SurveyAbstract from './SurveyAbstract.astro';
 import SurveySection from './SurveySection.astro';
 import { pathFor, repoUrl } from '../lib/catalog';
 import { siteName } from '../lib/site.mjs';
+import { surveyArxivUrl } from '../lib/survey.mjs';
 
 const overview = {
   "id": "overview",
@@ -48,6 +49,7 @@ const architecture = {
     <p class="survey-subtitle">A robotics-oriented review of models that connect future world prediction<br class="desktop-break"/> with executable action generation.</p>
     <SurveyAuthors/>
     <nav class="survey-links" aria-label="Survey resources">
+      <a href={surveyArxivUrl} target="_blank" rel="noopener noreferrer"><Icon name="paper" size={17}/> arXiv</a>
       <a href={pathFor('papers/')}><Icon name="book" size={17}/> Paper library</a>
       <a href={pathFor('map/?mode=quadrants')}><Icon name="grid" size={17}/> Research map</a>
       <a href={pathFor('reports/')}><Icon name="list" size={17}/> Reading reports</a>
